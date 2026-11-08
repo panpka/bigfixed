@@ -1,0 +1,9 @@
+### OS ###
+Thumbs.db
+.DS_Store
+
+### Agents ###
+.handoff/
+
+### Rust ###
+target/

@@ -1,0 +1,49 @@
+[workspace]
+resolver = "3"
+members = [".", "xtask"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "BSD-3-Clause"
+authors = ["panpka <dev@panpka.xyz>"]
+repository = "https://github.com/panpka/bigfixed"
+categories = ["mathematics", "data-structures"]
+keywords = ["fixed-point", "decimal", "bigint", "numeric"]
+readme = "README.md"
+
+[workspace.dependencies]
+criterion = { version = "0.8.2" }
+num-bigint = { version = "0.5.1" }
+num-integer = { version = "0.1.47" }
+num-traits = { version = "0.2.19" }
+thiserror = { version = "2.0.21" }
+
+[package]
+name = "pka-bigfixed"
+description = "Arbitrary-range fixed-point decimal with an alloc-free i64 fast path"
+include = ["/src", "/benches", "/README.md", "/LICENSE.md", "/HISTORY.md"]
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+categories.workspace = true
+keywords.workspace = true
+readme.workspace = true
+
+[lib]
+name = "bigfixed"
+
+[dependencies]
+num-bigint.workspace = true
+num-integer.workspace = true
+num-traits.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+
+[[bench]]
+name = "bench"
+harness = false
